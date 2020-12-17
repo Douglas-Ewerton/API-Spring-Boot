@@ -3,9 +3,9 @@ package odontologia.system.rest.api.model;
 import javax.persistence.*;
 import java.sql.Time;
 import java.util.Date;
-import  java.util.Calendar;
+
 import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,18 +18,17 @@ public class MarcacaoModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(nullable = false)
     private String nome;
 
-    @Column
+    @Column(nullable = false)
     private String telefone;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "data_consulta")
+    @Column(name = "data_consulta",nullable = false)
     private Date dataConsulta;
 
-
-    @Column(name = "hora_consulta")
+    @Column(name = "hora_consulta",nullable = false)
     private Time horaConsulta;
 
 
